@@ -19,7 +19,7 @@ import { useDispatch } from "react-redux";
 import { setMode } from "state";
 import profileImage from "assets/profile.jpg";
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   return (
@@ -37,7 +37,7 @@ const Navbar = () => {
       >
         {/* LEFT SIDE  */}
         <FlexBetween>
-          <IconButton onClick={() => console.log("open/close sidebar")}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween
